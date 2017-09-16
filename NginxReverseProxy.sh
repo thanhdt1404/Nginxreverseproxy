@@ -14,6 +14,7 @@ then
     sudo apt-get -y install apache2 libapache2-mod-fastcgi php-fpm;
     sudo sed -i 's/80/8080/g' /etc/apache2/ports.conf;
     sudo a2enmod actions;
+    sudo systemctl enable apache;
     sudo systemctl restart apache2;
     sudo mv /etc/apache2/mods-enabled/fastcgi.conf /etc/apache2/mods-enabled/fastcgi.conf.bak;
     sudo mv fastcgi-ubuntu-nginxreverseproxy.conf /etc/apache2/mods-enabled/fastcgi.conf;
@@ -24,6 +25,7 @@ then
     sudo mv default-ubuntu-nginxreverseproxy.conf /etc/nginx/conf.d/default.conf;
     sudo echo "Install Nginx Reverse Proxy Complete" >> /var/www/html;
     sudo systemctl restart apache2;
+    sudo systemctl enable nginx;
     sudo systemctl start nginx;
 
     sudo echo " Install Nginx Reverse Proxy Complete" >> /var/www/html/index.html;
