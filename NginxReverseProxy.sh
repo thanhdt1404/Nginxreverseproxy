@@ -2,7 +2,7 @@
 # ******************************************
 # Program: Nginx Reverse Proxy Installation Script
 # ******************************************
-    sudo yum -y install redhat-lsb-core;
+#    sudo yum -y install redhat-lsb-core;
 if [ "`lsb_release -is`" == "Ubuntu" ] || [ "`lsb_release -is`" == "Debian" ]
 then
 #   lsb_release -rs
